@@ -1,0 +1,19 @@
+function spinningWheel() {
+
+    const frames = ['|', '/', '-', '\\'];
+    let index = 0;
+
+    const x = setInterval(() => {
+        process.stdout.write('\r${frames[index]}');
+        index = (index + 1) % frames.length;
+    }, 100);
+
+    setTimeout(() => {
+        clearInterval(x);
+        process.stdout.write('\n');
+    }, 5000);
+
+
+    spinningWheel();
+
+}
